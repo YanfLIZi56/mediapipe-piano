@@ -4,11 +4,14 @@ import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 import path from "path";
 
+const isGitHubPages = process.env.DEPLOY_TARGET === "github-pages";
+
 // https://vite.dev/config/
 export default defineConfig({
+  base: isGitHubPages ? "/mediapipe-piano/" : "/",
   plugins: [
     react(),
-    miaodaDevPlugin(),
+    ...(isGitHubPages ? [] : [miaodaDevPlugin()]),
     svgr({
       svgrOptions: {
         icon: true,
