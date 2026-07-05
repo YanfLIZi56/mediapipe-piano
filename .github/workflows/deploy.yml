@@ -34,6 +34,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Download MediaPipe files
+        run: |
+          mkdir -p public/mediapipe
+          MP_VERSION="0.4.1675469240"
+          MP_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/hands@${MP_VERSION}"
+          curl -sL "${MP_BASE}/hands.js" -o public/mediapipe/hands.js
+          curl -sL "${MP_BASE}/hands.binarypb" -o public/mediapipe/hands.binarypb
+          curl -sL "${MP_BASE}/hands_solution_packed_assets.data" -o public/mediapipe/hands_solution_packed_assets.data
+          curl -sL "${MP_BASE}/hands_solution_wasm_bin.wasm" -o public/mediapipe/hands_solution_wasm_bin.wasm
+          CAM_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@${MP_VERSION}"
+          curl -sL "${CAM_BASE}/camera_utils.js" -o public/mediapipe/camera_utils.js
+          DRAW_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@${MP_VERSION}"
+          curl -sL "${DRAW_BASE}/drawing_utils.js" -o public/mediapipe/drawing_utils.js
+
       - name: Build
         run: npx vite build
         env:
