@@ -39,8 +39,6 @@ jobs:
           set -e
           mkdir -p public/mediapipe
           MP_VERSION="0.4.1675469240"
-          CAM_VERSION="0.3.1675466862"
-          DRAW_VERSION="0.3.1675466124"
           MP_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/hands@${MP_VERSION}"
           curl -sL "${MP_BASE}/hands.js" -o public/mediapipe/hands.js
           curl -sL "${MP_BASE}/hands.binarypb" -o public/mediapipe/hands.binarypb
@@ -49,8 +47,8 @@ jobs:
           curl -sL "${MP_BASE}/hands_solution_wasm_bin.wasm" -o public/mediapipe/hands_solution_wasm_bin.wasm
           curl -sL "${MP_BASE}/hands_solution_simd_wasm_bin.js" -o public/mediapipe/hands_solution_simd_wasm_bin.js
           curl -sL "${MP_BASE}/hands_solution_simd_wasm_bin.wasm" -o public/mediapipe/hands_solution_simd_wasm_bin.wasm
-          curl -sL "https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@${CAM_VERSION}/camera_utils.js" -o public/mediapipe/camera_utils.js
-          curl -sL "https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@${DRAW_VERSION}/drawing_utils.js" -o public/mediapipe/drawing_utils.js
+          curl -sL "https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" -o public/mediapipe/camera_utils.js
+          curl -sL "https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" -o public/mediapipe/drawing_utils.js
           echo "=== Downloaded files: ==="
           ls -lh public/mediapipe/
           echo "=== Verifying JS files are not HTML error pages ==="
