@@ -8,7 +8,9 @@ New-Item -ItemType Directory -Force -Path $TARGET_DIR | Out-Null
 $files = @(
     @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands.js"; Name = "hands.js" },
     @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands.binarypb"; Name = "hands.binarypb" },
+    @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hand_landmark_full.tflite"; Name = "hand_landmark_full.tflite" },
     @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_packed_assets.data"; Name = "hands_solution_packed_assets.data" },
+    @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_packed_assets_loader.js"; Name = "hands_solution_packed_assets_loader.js" },
     @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_wasm_bin.js"; Name = "hands_solution_wasm_bin.js" },
     @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_wasm_bin.wasm"; Name = "hands_solution_wasm_bin.wasm" },
     @{Url = "https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_simd_wasm_bin.js"; Name = "hands_solution_simd_wasm_bin.js" },

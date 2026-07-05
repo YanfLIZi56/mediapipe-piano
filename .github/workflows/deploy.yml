@@ -42,7 +42,9 @@ jobs:
           MP_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/hands@${MP_VERSION}"
           curl -sL "${MP_BASE}/hands.js" -o public/mediapipe/hands.js
           curl -sL "${MP_BASE}/hands.binarypb" -o public/mediapipe/hands.binarypb
+          curl -sL "${MP_BASE}/hand_landmark_full.tflite" -o public/mediapipe/hand_landmark_full.tflite
           curl -sL "${MP_BASE}/hands_solution_packed_assets.data" -o public/mediapipe/hands_solution_packed_assets.data
+          curl -sL "${MP_BASE}/hands_solution_packed_assets_loader.js" -o public/mediapipe/hands_solution_packed_assets_loader.js
           curl -sL "${MP_BASE}/hands_solution_wasm_bin.js" -o public/mediapipe/hands_solution_wasm_bin.js
           curl -sL "${MP_BASE}/hands_solution_wasm_bin.wasm" -o public/mediapipe/hands_solution_wasm_bin.wasm
           curl -sL "${MP_BASE}/hands_solution_simd_wasm_bin.js" -o public/mediapipe/hands_solution_simd_wasm_bin.js

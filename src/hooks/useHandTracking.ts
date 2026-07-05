@@ -209,7 +209,7 @@ export function useHandTracking(
 
       const hands = new Hands({
         locateFile: (file: string) =>
-          `/mediapipe/${file}`,
+          `${import.meta.env.BASE_URL}mediapipe/${file}`,
       });
 
       hands.setOptions({
