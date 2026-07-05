@@ -36,8 +36,11 @@ jobs:
 
       - name: Download MediaPipe files
         run: |
+          set -e
           mkdir -p public/mediapipe
           MP_VERSION="0.4.1675469240"
+          CAM_VERSION="0.3.1675466862"
+          DRAW_VERSION="0.3.1675466124"
           MP_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/hands@${MP_VERSION}"
           curl -sL "${MP_BASE}/hands.js" -o public/mediapipe/hands.js
           curl -sL "${MP_BASE}/hands.binarypb" -o public/mediapipe/hands.binarypb
@@ -46,10 +49,15 @@ jobs:
           curl -sL "${MP_BASE}/hands_solution_wasm_bin.wasm" -o public/mediapipe/hands_solution_wasm_bin.wasm
           curl -sL "${MP_BASE}/hands_solution_simd_wasm_bin.js" -o public/mediapipe/hands_solution_simd_wasm_bin.js
           curl -sL "${MP_BASE}/hands_solution_simd_wasm_bin.wasm" -o public/mediapipe/hands_solution_simd_wasm_bin.wasm
-          CAM_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@${MP_VERSION}"
-          curl -sL "${CAM_BASE}/camera_utils.js" -o public/mediapipe/camera_utils.js
-          DRAW_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@${MP_VERSION}"
-          curl -sL "${DRAW_BASE}/drawing_utils.js" -o public/mediapipe/drawing_utils.js
+          curl -sL "https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@${CAM_VERSION}/camera_utils.js" -o public/mediapipe/camera_utils.js
+          curl -sL "https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@${DRAW_VERSION}/drawing_utils.js" -o public/mediapipe/drawing_utils.js
+          echo "=== Downloaded files: ==="
+          ls -lh public/mediapipe/
+          echo "=== Verifying JS files are not HTML error pages ==="
+          ! head -1 public/mediapipe/hands.js | grep -q '<!DOCTYPE\|<html'
+          ! head -1 public/mediapipe/camera_utils.js | grep -q '<!DOCTYPE\|<html'
+          ! head -1 public/mediapipe/drawing_utils.js | grep -q '<!DOCTYPE\|<html'
+          echo "=== All files OK ==="
 
       - name: Build
         run: npx vite build

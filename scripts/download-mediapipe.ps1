@@ -1,4 +1,6 @@
 $MP_VERSION = "0.4.1675469240"
+$CAM_VERSION = "0.3.1675466862"
+$DRAW_VERSION = "0.3.1675466124"
 $TARGET_DIR = "public/mediapipe"
 
 Write-Host "Downloading MediaPipe files to $TARGET_DIR..."
@@ -13,8 +15,8 @@ $files = @(
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_wasm_bin.wasm"; Name="hands_solution_wasm_bin.wasm"},
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_simd_wasm_bin.js"; Name="hands_solution_simd_wasm_bin.js"},
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_simd_wasm_bin.wasm"; Name="hands_solution_simd_wasm_bin.wasm"},
-    @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@$MP_VERSION/camera_utils.js"; Name="camera_utils.js"},
-    @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@$MP_VERSION/drawing_utils.js"; Name="drawing_utils.js"}
+    @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@$CAM_VERSION/camera_utils.js"; Name="camera_utils.js"},
+    @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@$DRAW_VERSION/drawing_utils.js"; Name="drawing_utils.js"}
 )
 
 foreach ($file in $files) {
