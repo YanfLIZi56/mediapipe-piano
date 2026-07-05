@@ -77,10 +77,9 @@ pnpm -v   # 需要 ≥ 8（可用 npm i -g pnpm 安装）
 ### 安装步骤
 
 ```bash
-# 1. 克隆仓库，切换到 React-version 分支
-git clone https://github.com/YanfLIZi56/OpenCV-Play-Music.git
-cd OpenCV-Play-Music
-git checkout React-version
+# 1. 克隆仓库
+git clone https://github.com/YanfLIZi56/mediapipe-piano.git
+cd mediapipe-piano
 
 # 2. 安装依赖
 pnpm install
@@ -104,9 +103,9 @@ pnpm preview    # 本地预览构建结果
 
 项目已通过 GitHub Actions 自动部署到 GitHub Pages：
 
-👉 **[在线 Demo](https://yanflizi56.github.io/OpenCV-Play-Music/)**
+👉 **[在线 Demo](https://yanflizi56.github.io/mediapipe-piano/)**
 
-> 每次推送代码到 `React-version` 分支，流水线会自动构建并部署。
+> 每次推送代码到 `main` 分支，流水线会自动构建并部署。
 
 ---
 
@@ -167,7 +166,7 @@ cp .env.example .env
 
 本项目完全开源，欢迎任何形式的贡献！
 
-- 🐛 发现 Bug？直接提 [Issue](https://github.com/YanfLIZi56/OpenCV-Play-Music/issues)
+- 🐛 发现 Bug？直接提 [Issue](https://github.com/YanfLIZi56/mediapipe-piano/issues)
 - ✨ 有想法？Fork 之后尽情魔改，欢迎提 PR 合并回主仓库
 - 💬 想讨论技术细节？Issue 区随时交流
 
