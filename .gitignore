@@ -45,7 +45,6 @@ Thumbs.db
 
 # ── 杂项 ─────────────────────────────────────────────────────
 *.local
-package-lock.json
 /.skills
 /tasks
 package.json.[0-9]*
