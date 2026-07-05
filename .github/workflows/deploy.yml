@@ -42,7 +42,10 @@ jobs:
           curl -sL "${MP_BASE}/hands.js" -o public/mediapipe/hands.js
           curl -sL "${MP_BASE}/hands.binarypb" -o public/mediapipe/hands.binarypb
           curl -sL "${MP_BASE}/hands_solution_packed_assets.data" -o public/mediapipe/hands_solution_packed_assets.data
+          curl -sL "${MP_BASE}/hands_solution_wasm_bin.js" -o public/mediapipe/hands_solution_wasm_bin.js
           curl -sL "${MP_BASE}/hands_solution_wasm_bin.wasm" -o public/mediapipe/hands_solution_wasm_bin.wasm
+          curl -sL "${MP_BASE}/hands_solution_simd_wasm_bin.js" -o public/mediapipe/hands_solution_simd_wasm_bin.js
+          curl -sL "${MP_BASE}/hands_solution_simd_wasm_bin.wasm" -o public/mediapipe/hands_solution_simd_wasm_bin.wasm
           CAM_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@${MP_VERSION}"
           curl -sL "${CAM_BASE}/camera_utils.js" -o public/mediapipe/camera_utils.js
           DRAW_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@${MP_VERSION}"

@@ -9,7 +9,10 @@ $files = @(
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands.js"; Name="hands.js"},
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands.binarypb"; Name="hands.binarypb"},
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_packed_assets.data"; Name="hands_solution_packed_assets.data"},
+    @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_wasm_bin.js"; Name="hands_solution_wasm_bin.js"},
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_wasm_bin.wasm"; Name="hands_solution_wasm_bin.wasm"},
+    @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_simd_wasm_bin.js"; Name="hands_solution_simd_wasm_bin.js"},
+    @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/hands@$MP_VERSION/hands_solution_simd_wasm_bin.wasm"; Name="hands_solution_simd_wasm_bin.wasm"},
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@$MP_VERSION/camera_utils.js"; Name="camera_utils.js"},
     @{Url="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@$MP_VERSION/drawing_utils.js"; Name="drawing_utils.js"}
 )
